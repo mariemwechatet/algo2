@@ -1,0 +1,86 @@
+var
+ tab1= ARRAY_OF INTEGER[];
+ tab2= ARRAY_OF INTEGER[];
+ htab : HASH_TABLE<INTEGER,INTEGER>;
+ htab2: HASH_TABLE<INTEGER,INTEGER>;
+ n:INTEGER
+ n2:INTEGER
+ i:INTEGER;
+ j:INTEGER;
+ sum=0
+ sum2=0
+ nbOccu:INTEGER
+ FUNCTION sum_distinct(TAB1,TAB2,n,n2) : INTEGER
+ VAR
+     set_declarations
+ BEGIN
+     set_instructions
+     RETURN value ;
+ END
+ FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+ {
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+    {
+sum=abs((tab[i])-(tab2[j]));
+    } 
+ }
+ FUNCTION methode2 (htab,htab2,n,n2) : INTEGER
+ VAR
+     sum=0
+ BEGIN
+ FOR i FROM 0 TO htab.length-1 STEP 1  DO
+ {
+      {
+    FOR j FROM 0 TO htab2.length-1 STEP 1  DO
+    {
+        sum=abs((htab[i])-(htab2[j]));
+    } 
+ }
+     RETURN sum ;
+ END
+ FUNCTION sumOverlaping (tab1,tab2) : INTEGER
+ VAR
+     sum=0
+     sum1=0
+     sum2=0
+
+ BEGIN
+     
+         i=0
+        j=tab[i]   
+    
+     WHILE (i<tab1.length) DO
+         IF (j==tab[i]) THEN
+             sum1:=sum+tab[i]
+         END_IF
+         i++
+     END_WHILE
+     WHILE (i<tab1.length) DO
+         IF (j==tab[i]) THEN
+             sum2:=sum+tab[i]
+         END_IF
+         i++
+     END_WHILE
+
+     RETURN sum=sum1+sum2 ;
+ END
+
+ 
+//programme princimale
+ n=read("saisier le taille du tableau")
+ FOR i FROM 1 TO n STEP 1  DO
+     tab1[i]=read("saisier les element du tableau")
+ END_FOR
+ n2=read("saisier le taille du tableau")
+ FOR i FROM 1 TO n STEP 1  DO
+     tab2[i]=read("saisier les element du tableau")
+ END_FOR
+
+ sum=sum_distinct(tab1,tab2,n,n2);
+ sum2=methode2 (htab,htab2,n,n2);
+
+ nbOccu=sumOverlaping (tab1,tab2);
+
+
+ 
+
